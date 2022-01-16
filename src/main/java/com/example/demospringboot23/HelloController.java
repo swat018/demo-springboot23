@@ -9,7 +9,7 @@ import java.time.Period;
 @RestController
 public class HelloController {
 
-    @Value("${timeToFry}")
+    @Value("15m")
     private Period timeToFry;
 
     @GetMapping("/hello")
