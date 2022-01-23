@@ -10,11 +10,11 @@ import java.time.Period;
 @RestController
 public class HelloController {
 
-//    @Autowired
-//    ApplicationAvailability availability;
-//
-//    @Autowired
-//    LocalHostService localHostService;
+    @Autowired
+    ApplicationAvailability availability;
+
+    @Autowired
+    LocalHostService localHostService;
 //
 //    @GetMapping("/hello")
 //    public String hello() {
@@ -25,8 +25,12 @@ public class HelloController {
     @Autowired
     ServiceProperties serviceProperties;
 
+
     @GetMapping("/hello")
     public String hello() {
-        return serviceProperties.getMessage();
+        return "Application is now " + availability.getLivenessState()
+                + " " + availability.getReadinessState()
+                + " " + localHostService.getLocalHostInfo()
+                + " " + serviceProperties.getMessage();
     }
 }
