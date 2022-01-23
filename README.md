@@ -5,3 +5,5 @@
 - 스프링 부트로 효율적인 도커 이미지 만들기
 - Graceful 셧다운
 - Liveness와 Readiness
+- Liveness와 Readiness 쿠버네티스 연동
+- @ConfigurationProperties
